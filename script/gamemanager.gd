@@ -1,10 +1,5 @@
 extends Node2D
 
-var troll
-var floormap
-var interface
-var label
-
 var playerresources = {
 	'food': 0,
 	'water': 0,

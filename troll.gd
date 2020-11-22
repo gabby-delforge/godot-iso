@@ -17,3 +17,6 @@ func _input(ev):
 		print('Pixel Position: ' + str(position))
 		#var isometric = world_to_map(position)
 		#print('Isometric Position: ' + str(isometric))
+
+func _process(delta):
+	gamemanager.playerresources.food += 1 * delta
