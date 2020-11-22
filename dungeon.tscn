@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://troll.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Floor.gd" type="Script" id=3]
-[ext_resource path="res://script/gamemanager.gd" type="Script" id=4]
+[ext_resource path="res://script/root.gd" type="Script" id=4]
 [ext_resource path="res://script/camera.gd" type="Script" id=5]
+[ext_resource path="res://script/interface.gd" type="Script" id=6]
 
-[node name="game" type="Node2D"]
+[node name="root" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -15,6 +16,7 @@ script = ExtResource( 5 )
 [node name="interface" type="Control" parent="Camera2D"]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

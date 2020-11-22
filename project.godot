@@ -23,6 +23,10 @@ as well as be occluded when standing in front or behind them."
 run/main_scene="res://dungeon.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+gamemanager="*res://script/gamemanager.gd"
+
 [display]
 
 window/stretch/mode="2d"

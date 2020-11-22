@@ -1,23 +1,11 @@
 extends Node2D
 
-var troll
-var floormap
-var interface
-var label
 
-var playerresources = {
-	'food': 0,
-	'water': 0,
-	'wood': 0,
-	'cash': 0
-}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	gamemanager.troll = get_node("dungeon/Troll")
 
-func _process(delta):
-	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
