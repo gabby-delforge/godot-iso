@@ -10,3 +10,10 @@ func _physics_process(_delta):
 	motion = motion.normalized() * MOTION_SPEED
 	#warning-ignore:return_value_discarded
 	move_and_slide(motion)
+
+func _input(ev):
+	if ev is InputEventKey and ev.scancode == KEY_K:
+		var position = self.position
+		print('Pixel Position: ' + str(position))
+		#var isometric = world_to_map(position)
+		#print('Isometric Position: ' + str(isometric))
