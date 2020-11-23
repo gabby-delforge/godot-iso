@@ -7,6 +7,7 @@ onready var sprite = get_node("Sprite")
 const MOTION_SPEED = 160 # Pixels/second.
 
 func _ready():
+	print(self.position)
 	self.input_pickable = true
 	selected_material = load("res://shaders/selected.material")
 	
@@ -24,3 +25,13 @@ func _physics_process(_delta):
 
 func _process(delta):
 	gamemanager.playerresources.food += 1 * delta
+
+func on_select():
+	is_selected = true
+	sprite.set_material(selected_material)
+	
+func on_deselect():
+	is_selected = false
+	sprite.set_material(null)
+
+	

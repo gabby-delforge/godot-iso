@@ -4,10 +4,10 @@
 [ext_resource path="res://troll.png" type="Texture" id=2]
 [ext_resource path="res://script/selectarea.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 19.076
 
-[sub_resource type="CapsuleShape2D" id=3]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 27.0
 height = 32.6852
 
@@ -22,7 +22,7 @@ texture = ExtResource( 2 )
 
 [node name="WorldCollider" type="CollisionShape2D" parent="."]
 position = Vector2( 0.64093, -1.3084 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="SelectArea" type="Area2D" parent="."]
 collision_mask = 0
@@ -30,4 +30,4 @@ script = ExtResource( 3 )
 
 [node name="SelectCollider" type="CollisionShape2D" parent="SelectArea"]
 position = Vector2( -1, -24 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )

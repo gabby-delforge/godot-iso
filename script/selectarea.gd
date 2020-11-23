@@ -15,13 +15,12 @@ func _input_event(viewport, ev, shape_idx):
 		self.on_click()
 
 func on_click():
+	# TODO: Replicate deselection logic (when select other unit or click on floor, deselect current selection)
 	# Change troll select flag to true
 	if troll.is_selected:
-		troll.is_selected = false
-		troll.sprite.set_material(null)
+		troll.on_deselect()
 	else:
-		troll.is_selected = true
-		troll.sprite.set_material(troll.selected_material)
+		troll.on_select()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
