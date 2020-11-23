@@ -87,7 +87,12 @@ func _physics_process(delta):
 		# TODO: Cleanup in_margin. Can probably use Rect2d.contains for a cleaner if statement
 		# TODO: Currently moves the same speed no matter how far your mouse is from the edge of the screen.
 		#       Ideally, it should move faster if you're on the very edge of the screen.
-		var mouse_in_margin = (viewport_rect.size.x - viewport_mouse.x <= camera_margin) || (viewport_mouse.x <= camera_margin) || (viewport_rect.size.y - viewport_mouse.y <= camera_margin) || (viewport_mouse.y <= camera_margin)
+		var mouse_in_margin =\
+			(viewport_rect.size.x - viewport_mouse.x <= camera_margin) or\
+			(viewport_mouse.x <= camera_margin) or\
+			(viewport_rect.size.y - viewport_mouse.y <= camera_margin) or\
+			(viewport_mouse.y <= camera_margin)
+		
 		if mouse_in_margin:
 			var move_direction = (viewport_mouse-viewport_center).normalized()
 			camera_movement += camera_speed*delta*move_direction
