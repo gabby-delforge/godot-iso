@@ -1,6 +1,6 @@
 extends Area2D
 
-
+onready var troll = get_parent()
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -15,7 +15,13 @@ func _input_event(viewport, ev, shape_idx):
 		self.on_click()
 
 func on_click():
-	print("CLICK")
+	# Change troll select flag to true
+	if troll.is_selected:
+		print("DESELECTING TROLL " + str(troll))
+		troll.is_selected = false
+	else:
+		print("SELECTING TROLL " + str(troll))
+		troll.is_selected = true
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

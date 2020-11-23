@@ -1,7 +1,6 @@
 extends KinematicBody2D
 
-onready var worldCollider = get_node("WorldCollider")
-onready var selectCollider = get_node("SelectArea/SelectCollider")
+var is_selected = false
 
 const MOTION_SPEED = 160 # Pixels/second.
 
