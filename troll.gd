@@ -4,14 +4,28 @@ var is_selected = false
 var selected_material
 onready var sprite = get_node("Sprite")
 
-const MOTION_SPEED = 160 # Pixels/second.
+#const MOTION_SPEED = 200 # Pixels/second.
+export (int) var speed = 200
+
+var target = Vector2()
+var velocity = Vector2()
 
 func _ready():
-	print(self.position)
+	target = position
 	self.input_pickable = true
 	selected_material = load("res://shaders/selected.material")
 	
+func _input(ev):
+	if ev and ev is InputEventMouseButton and ev.button_index == BUTTON_RIGHT and ev.is_pressed() and is_selected:
+		target = get_global_mouse_position()
+		velocity = position.direction_to(target) * speed
+	
 func _physics_process(_delta):
+	if position.distance_to(target) < 5:
+		velocity = Vector2.ZERO
+	else:
+		look_at(target)
+		velocity = move_and_slide(velocity)
 #	var motion = Vector2()
 #	motion.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 #	motion.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
