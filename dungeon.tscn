@@ -63,7 +63,7 @@ margin_left = 682.525
 margin_top = 12.3028
 margin_right = 828.525
 margin_bottom = 61.3028
-text = "Food: "
+text = "food"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -73,7 +73,7 @@ margin_left = 781.414
 margin_top = 12.3028
 margin_right = 927.414
 margin_bottom = 61.3028
-text = "Food: "
+text = "wood"
 __meta__ = {
 "_edit_use_anchors_": false
 }
