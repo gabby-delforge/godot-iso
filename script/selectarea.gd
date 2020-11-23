@@ -17,11 +17,11 @@ func _input_event(viewport, ev, shape_idx):
 func on_click():
 	# Change troll select flag to true
 	if troll.is_selected:
-		print("DESELECTING TROLL " + str(troll))
 		troll.is_selected = false
+		troll.sprite.set_material(null)
 	else:
-		print("SELECTING TROLL " + str(troll))
 		troll.is_selected = true
+		troll.sprite.set_material(troll.selected_material)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

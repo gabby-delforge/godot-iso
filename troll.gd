@@ -1,11 +1,14 @@
 extends KinematicBody2D
 
 var is_selected = false
+var selected_material
+onready var sprite = get_node("Sprite")
 
 const MOTION_SPEED = 160 # Pixels/second.
 
 func _ready():
 	self.input_pickable = true
+	selected_material = load("res://shaders/selected.material")
 	
 func _physics_process(_delta):
 #	var motion = Vector2()
