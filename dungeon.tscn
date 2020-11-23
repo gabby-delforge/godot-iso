@@ -44,8 +44,9 @@ position = Vector2( 308.286, 316.419 )
 position = Vector2( 365.746, 321.696 )
 current = true
 script = ExtResource( 5 )
+key = false
 drag = false
-edge = true
+wheel = false
 
 [node name="interface" type="Control" parent="RTS-Camera2D"]
 margin_left = -512.0
