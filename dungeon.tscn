@@ -4,7 +4,7 @@
 [ext_resource path="res://troll.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Floor.gd" type="Script" id=3]
 [ext_resource path="res://script/root.gd" type="Script" id=4]
-[ext_resource path="res://script/camera.gd" type="Script" id=5]
+[ext_resource path="res://addons/carmel4a97.RTS_Camera2D/RTS-Camera2D.gd" type="Script" id=5]
 [ext_resource path="res://script/interface.gd" type="Script" id=6]
 
 [node name="root" type="Node2D"]
@@ -40,19 +40,23 @@ tile_data = PoolIntArray( -917493, 2, -1200553578, -917492, 2, -1200553578, -917
 position = Vector2( 368.142, 347.007 )
 collision_mask = 0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="RTS-Camera2D" type="Camera2D" parent="."]
+position = Vector2( 365.746, 321.696 )
 current = true
 script = ExtResource( 5 )
+edge = true
 
-[node name="interface" type="Control" parent="Camera2D"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="interface" type="Control" parent="RTS-Camera2D"]
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Camera2D/interface"]
+[node name="Label" type="Label" parent="RTS-Camera2D/interface"]
 margin_left = 143.134
 margin_top = -288.857
 margin_right = 289.134
