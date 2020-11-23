@@ -40,6 +40,12 @@ tile_data = PoolIntArray( -917493, 2, -1200553578, -917492, 2, -1200553578, -917
 [node name="Troll" parent="dungeon" instance=ExtResource( 2 )]
 position = Vector2( 308.286, 316.419 )
 
+[node name="Troll2" parent="dungeon" instance=ExtResource( 2 )]
+position = Vector2( 176.261, 406.967 )
+
+[node name="Troll3" parent="dungeon" instance=ExtResource( 2 )]
+position = Vector2( 600.073, 449.012 )
+
 [node name="RTS-Camera2D" type="Camera2D" parent="."]
 position = Vector2( 365.746, 321.696 )
 current = true
@@ -75,6 +81,16 @@ margin_top = 12.3028
 margin_right = 927.414
 margin_bottom = 61.3028
 text = "wood"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NumberSelected label" type="Label" parent="RTS-Camera2D/interface"]
+margin_left = 867.805
+margin_top = 11.7725
+margin_right = 922.805
+margin_bottom = 25.7725
+text = "selected"
 __meta__ = {
 "_edit_use_anchors_": false
 }

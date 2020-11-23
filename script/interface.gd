@@ -3,6 +3,7 @@ extends Control
 # Update resource labels
 onready var food_label = get_node("Food label")
 onready var wood_label = get_node("Wood label")
+onready var num_selected_label = get_node("NumberSelected label")
 
 # Drag to select units
 var dragging = false	# Is the player dragging?
@@ -14,12 +15,15 @@ var select_rect = RectangleShape2D.new()	# Collision shape for drag box
 func _ready():
 	food_label.text = "food: " + str(gamemanager.playerresources.food)
 	wood_label.text = "wood: " + str(gamemanager.playerresources.wood)
+	num_selected_label.text = "selected: " + str(selected.size())	
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	food_label.text = "food: " + str(round(gamemanager.playerresources.food))
+	wood_label.text = "wood: " + str(gamemanager.playerresources.wood)
+	num_selected_label.text = "selected: " + str(selected.size())	
 	pass
 	
 	
