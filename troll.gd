@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-
+onready var selectArea = get_node("SelectArea")
+onready var selectCollider = get_node("SelectArea/Shape")
 
 const MOTION_SPEED = 160 # Pixels/second.
 
@@ -17,6 +18,8 @@ func _input(ev):
 	if ev is InputEventKey and ev.scancode == KEY_K:
 		var position = self.position
 		print('Pixel Position: ' + str(position))
+	if ev and ev is InputEventMouseButton:
+		pass
 		#var isometric = world_to_map(position)
 		#print('Isometric Position: ' + str(isometric))
 
