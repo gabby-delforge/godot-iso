@@ -8,6 +8,7 @@
 [ext_resource path="res://script/interface.gd" type="Script" id=6]
 
 [node name="root" type="Node2D"]
+position = Vector2( -83.4388, -156.978 )
 script = ExtResource( 4 )
 
 [node name="dungeon" type="Node2D" parent="."]
@@ -44,6 +45,7 @@ collision_mask = 0
 position = Vector2( 365.746, 321.696 )
 current = true
 script = ExtResource( 5 )
+drag = false
 edge = true
 
 [node name="interface" type="Control" parent="RTS-Camera2D"]
@@ -56,11 +58,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="RTS-Camera2D/interface"]
-margin_left = 143.134
-margin_top = -288.857
-margin_right = 289.134
-margin_bottom = -239.857
+[node name="Food label" type="Label" parent="RTS-Camera2D/interface"]
+margin_left = 682.525
+margin_top = 12.3028
+margin_right = 828.525
+margin_bottom = 61.3028
+text = "Food: "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wood label" type="Label" parent="RTS-Camera2D/interface"]
+margin_left = 781.414
+margin_top = 12.3028
+margin_right = 927.414
+margin_bottom = 61.3028
 text = "Food: "
 __meta__ = {
 "_edit_use_anchors_": false

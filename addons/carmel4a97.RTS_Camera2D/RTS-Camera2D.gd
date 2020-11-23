@@ -118,27 +118,27 @@ func _physics_process(delta):
 	_prev_mouse_pos = get_local_mouse_position()
 
 func _unhandled_input( event ):
-	if event is InputEventMouseButton:
-		if drag and\
-		   event.button_index == BUTTON_RIGHT:
-			# Control by right mouse button.
-			if event.pressed: __rmbk = true
-			else: __rmbk = false
-		# Check if mouse wheel was used. Not handled by ImputMap!
-		if wheel:
-			# Checking if future zoom won't be under 0.
-			# In that cause engine will flip screen.
-			if event.button_index == BUTTON_WHEEL_UP and\
-			camera_zoom.x - camera_zoom_speed.x > 0 and\
-			camera_zoom.y - camera_zoom_speed.y > 0:
-				camera_zoom -= camera_zoom_speed
-				set_zoom(camera_zoom)
-				# Checking if future zoom won't be above zoom_out_limit.
-			if event.button_index == BUTTON_WHEEL_DOWN and\
-			camera_zoom.x + camera_zoom_speed.x < zoom_out_limit and\
-			camera_zoom.y + camera_zoom_speed.y < zoom_out_limit:
-				camera_zoom += camera_zoom_speed
-				set_zoom(camera_zoom)
+#	if event is InputEventMouseButton:
+#		if drag and\
+#		   event.button_index == BUTTON_RIGHT:
+#			# Control by right mouse button.
+#			if event.pressed: __rmbk = true
+#			else: __rmbk = false
+#		# Check if mouse wheel was used. Not handled by ImputMap!
+#		if wheel:
+#			# Checking if future zoom won't be under 0.
+#			# In that cause engine will flip screen.
+#			if event.button_index == BUTTON_WHEEL_UP and\
+#			camera_zoom.x - camera_zoom_speed.x > 0 and\
+#			camera_zoom.y - camera_zoom_speed.y > 0:
+#				camera_zoom -= camera_zoom_speed
+#				set_zoom(camera_zoom)
+#				# Checking if future zoom won't be above zoom_out_limit.
+#			if event.button_index == BUTTON_WHEEL_DOWN and\
+#			camera_zoom.x + camera_zoom_speed.x < zoom_out_limit and\
+#			camera_zoom.y + camera_zoom_speed.y < zoom_out_limit:
+#				camera_zoom += camera_zoom_speed
+#				set_zoom(camera_zoom)
 	# Control by keyboard handled by InpuMap.
 	if event.is_action_pressed("move_left"):
 		__keys[0] = true
