@@ -97,14 +97,14 @@ func _physics_process(delta):
 			var move_direction = (viewport_mouse-viewport_center).normalized()
 			camera_movement += camera_speed*delta*move_direction
 
-#		if viewport_rect.size.x - viewport_mouse.x <= camera_margin:
-#			camera_movement.x += camera_speed * delta
-#		if viewport_mouse.x <= camera_margin:
-#			camera_movement.x -= camera_speed * delta
-#		if viewport_rect.size.y - viewport_mouse.y <= camera_margin:
-#			camera_movement.y += camera_speed * delta
-#		if viewport_mouse.y <= camera_margin:
-#			camera_movement.y -= camera_speed * delta
+		if viewport_rect.size.x - viewport_mouse.x <= camera_margin:
+			camera_movement.x += camera_speed * delta
+		if viewport_mouse.x <= camera_margin:
+			camera_movement.x -= camera_speed * delta
+		if viewport_rect.size.y - viewport_mouse.y <= camera_margin:
+			camera_movement.y += camera_speed * delta
+		if viewport_mouse.y <= camera_margin:
+			camera_movement.y -= camera_speed * delta
 	
 	# When RMB is pressed, move camera by difference of mouse position
 	if drag and __rmbk:
