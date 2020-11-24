@@ -1,9 +1,9 @@
 extends Control
 
 # Update resource labels
-onready var food_label = get_node("Food label")
-onready var wood_label = get_node("Wood label")
-onready var num_selected_label = get_node("NumberSelected label")
+onready var food_label = get_node("HBoxContainer/Food label")
+onready var wood_label = get_node("HBoxContainer/Wood label")
+onready var num_selected_label = get_node("HBoxContainer/NumberSelected label")
 
 # Drag to select units
 var dragging = false	# Is the player dragging?
