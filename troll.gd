@@ -18,6 +18,8 @@ func _ready():
 func _input(ev):
 	if ev and ev is InputEventMouseButton and ev.button_index == BUTTON_RIGHT and ev.is_pressed() and is_selected:
 		target = get_global_mouse_position()
+		FIXPLEASE(target)
+		#print(position)
 	
 func _physics_process(_delta):
 	if position.distance_to(target) < 5:
@@ -48,7 +50,15 @@ func on_deselect():
 
 func move_to(target):
 	velocity = position.direction_to(target) * speed
+	#velocity = cartesion_to_isometric(position.direction_to(target)).normalized() * speed
 	# look_at(target)
 	velocity = move_and_slide(velocity)
 
+func FIXPLEASE(target):
+	var local_mouse = str(get_local_mouse_position())
+	var global_mouse = str(get_global_mouse_position())
+	print("Local: " + local_mouse)
+	print("Global: " + global_mouse)
+	print("Position: " + str(position))
+	print("Target: " + str(target))
 	
