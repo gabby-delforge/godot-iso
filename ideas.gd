@@ -19,3 +19,18 @@ RESOURCES
 - Firewood
 - Money (buy stuff at store)
 """
+
+"""
+(MAYBE) USEFUL FUNCTIONS
+
+# Recursive function to print out all children and subchildren of a node
+func getallnodes(node):
+	for N in node.get_children():
+		if N.get_child_count() > 0:
+			print("["+N.get_name()+"]")
+			getallnodes(N)
+		else:
+			# Do something
+			print("- "+N.get_name())
+# Alt: Use group function of scene tree
+"""

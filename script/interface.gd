@@ -7,7 +7,7 @@ onready var num_selected_label = get_node("HBoxContainer/NumberSelected label")
 
 # Drag to select units
 var dragging = false	# Is the player dragging?
-var selected = [] 		# Selected units 
+var selection = [] 		# Selected units 
 var drag_start = Vector2.ZERO # Position where drag begins
 var select_rect = RectangleShape2D.new()	# Collision shape for drag box
 
@@ -15,7 +15,7 @@ var select_rect = RectangleShape2D.new()	# Collision shape for drag box
 func _ready():
 	food_label.text = "food: " + str(gamemanager.playerresources.food)
 	wood_label.text = "wood: " + str(gamemanager.playerresources.wood)
-	num_selected_label.text = "selected: " + str(selected.size())	
+	num_selected_label.text = "selected: " + str(selection.size())	
 	pass
 
 
@@ -23,7 +23,7 @@ func _ready():
 func _process(delta):
 	food_label.text = "food: " + str(round(gamemanager.playerresources.food))
 	wood_label.text = "wood: " + str(gamemanager.playerresources.wood)
-	num_selected_label.text = "selected: " + str(selected.size())	
+	num_selected_label.text = "selected: " + str(selection.size())	
 	pass
 	
 	
@@ -32,7 +32,7 @@ func _input(ev):
 	if ev is InputEventMouseButton and ev.button_index == BUTTON_LEFT:
 		if ev.pressed:
 			# Start drag if no units selected
-			if selected.size() == 0:
+			if selection.size() == 0:
 				dragging = true
 				drag_start = ev.position
 		# If button released while dragging
